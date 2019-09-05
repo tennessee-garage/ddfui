@@ -99,7 +99,10 @@ export default class DanceFloorController extends React.Component {
                     <Card bg="light" style={{ width: '18rem' }}>
                         <Card.Header>Overlay 1</Card.Header>
                         <Card.Body>
-                            <ProcessorChooser processors={processors} onChange={(e) => this.onLayerProcesorChange('overlay1', e.target.value)} />
+                            <ProcessorChooser
+                                value={status.layers ? status.layers.overlay1.processor_name || '' : ''}
+                                processors={processors}
+                                onChange={(e) => this.onLayerProcesorChange('overlay1', e.target.value)} />
                             <LayerControls
                                 layerInfo={status.layers ? status.layers.overlay1 : {}}
                                 onAlphaChange={(obj, value) => this.onLayerParamChange('overlay1', 'alpha', value)}
@@ -112,7 +115,10 @@ export default class DanceFloorController extends React.Component {
                     <Card bg="light" style={{ width: '18rem' }}>
                         <Card.Header>Overlay 2</Card.Header>
                         <Card.Body>
-                            <ProcessorChooser processors={processors} onChange={(e) => this.onLayerProcesorChange('overlay2', e.target.value)} />
+                            <ProcessorChooser
+                                value={status.layers ? status.layers.overlay1.processor_name || '' : ''}
+                                processors={processors}
+                                onChange={(e) => this.onLayerProcesorChange('overlay2', e.target.value)} />
                             <LayerControls
                                 layerInfo={status.layers ? status.layers.overlay2 : {}}
                                 onAlphaChange={(obj, value) => this.onLayerParamChange('overlay2', 'alpha', value)}
