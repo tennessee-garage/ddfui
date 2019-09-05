@@ -1,5 +1,7 @@
 import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
+
+import DanceFloorController from './components/DanceFloorController';
 
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
@@ -7,11 +9,7 @@ import './App.css';
 function App() {
   return (
     <Container>
-      <Row>
-        <Col>
-          <h1>Dance Floor!</h1>
-        </Col>
-      </Row>
+      <DanceFloorController />
     </Container>
   );
 }
