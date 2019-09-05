@@ -116,7 +116,7 @@ export default class DanceFloorController extends React.Component {
                         <Card.Header>Overlay 2</Card.Header>
                         <Card.Body>
                             <ProcessorChooser
-                                value={status.layers ? status.layers.overlay1.processor_name || '' : ''}
+                                value={status.layers ? status.layers.overlay2.processor_name || '' : ''}
                                 processors={processors}
                                 onChange={(e) => this.onLayerProcesorChange('overlay2', e.target.value)} />
                             <LayerControls
