@@ -1,7 +1,6 @@
 export default class DanceFloorClient {
     constructor(baseUrl = 'http://localhost:1977') {
         this.baseUrl = baseUrl;
-        console.log('yo', baseUrl);
     }
 
     async _request(method, path, data = null) {

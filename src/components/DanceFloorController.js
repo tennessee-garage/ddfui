@@ -1,10 +1,11 @@
 import React from 'react';
-import { Row, Col } from 'react-bootstrap';
+import { Row, Col, Card } from 'react-bootstrap';
 
 import Playlist from './Playlist';
 import PlaylistControls from './PlaylistControls';
 import LayerControls from './LayerControls';
 import FloorPreview from './FloorPreview';
+import ProcessorChooser from './ProcessorChooser';
 
 import DanceFloorClient from '../lib/DanceFloorClient';
 const CLIENT = new DanceFloorClient();
@@ -64,8 +65,14 @@ export default class DanceFloorController extends React.Component {
         await this.refreshStatus();
     };
 
+    onLayerProcesorChange = async (layerName, processorName) => {
+        await CLIENT.setLayer(layerName, { processor_name: processorName });
+        await this.refreshStatus();
+    };
+
     render() {
         const { status } = this.state;
+        const processors = status.processors ? Object.values(status.processors) : [];
         return (
             <Row>
                 <Col md={4}>
@@ -83,12 +90,37 @@ export default class DanceFloorController extends React.Component {
                         onIntensityChange={(obj, value) => this.onLayerParamChange('playlist', 'ranged_values', { '1': value })}
                         />
                 </Col>
-                <Col md={4} className="text-center">
+                <Col md={4}>
                     <h4>Main</h4>
                     <FloorPreview />
                 </Col>
-                <Col md={4} className="text-right">
+                <Col md={4}>
                     <h4>Layers</h4>
+                    <Card bg="light" style={{ width: '18rem' }}>
+                        <Card.Header>Overlay 1</Card.Header>
+                        <Card.Body>
+                            <ProcessorChooser processors={processors} onChange={(e) => this.onLayerProcesorChange('overlay1', e.target.value)} />
+                            <LayerControls
+                                layerInfo={status.layers ? status.layers.overlay1 : {}}
+                                onAlphaChange={(obj, value) => this.onLayerParamChange('overlay1', 'alpha', value)}
+                                onWetDryChange={(obj, value) => this.onLayerParamChange('overlay1', 'ranged_values', { '0': value })}
+                                onIntensityChange={(obj, value) => this.onLayerParamChange('overlay1', 'ranged_values', { '1': value })}
+                                />
+                        </Card.Body>
+                    </Card>
+                    <br/>
+                    <Card bg="light" style={{ width: '18rem' }}>
+                        <Card.Header>Overlay 2</Card.Header>
+                        <Card.Body>
+                            <ProcessorChooser processors={processors} onChange={(e) => this.onLayerProcesorChange('overlay2', e.target.value)} />
+                            <LayerControls
+                                layerInfo={status.layers ? status.layers.overlay2 : {}}
+                                onAlphaChange={(obj, value) => this.onLayerParamChange('overlay2', 'alpha', value)}
+                                onWetDryChange={(obj, value) => this.onLayerParamChange('overlay2', 'ranged_values', { '0': value })}
+                                onIntensityChange={(obj, value) => this.onLayerParamChange('overlay2', 'ranged_values', { '1': value })}
+                                />
+                        </Card.Body>
+                    </Card>
                 </Col>
             </Row>
         )

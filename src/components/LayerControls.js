@@ -38,7 +38,7 @@ export default function LayerControls({ layerInfo, onAlphaChange, onIntensityCha
     return (
         <div>
             <Row>
-                <Col md={3}>
+                <Col md={5}>
                     <b>alpha</b>
                 </Col>
                 <Col>
@@ -54,7 +54,7 @@ export default function LayerControls({ layerInfo, onAlphaChange, onIntensityCha
                 </Col>
             </Row>
             <Row>
-                <Col md={3}>
+                <Col md={5}>
                     <b>wet/dry</b>
                 </Col>
                 <Col>
@@ -70,7 +70,7 @@ export default function LayerControls({ layerInfo, onAlphaChange, onIntensityCha
                 </Col>
             </Row>
             <Row>
-                <Col md={3}>
+                <Col md={5}>
                     <b>intensity</b>
                 </Col>
                 <Col>
