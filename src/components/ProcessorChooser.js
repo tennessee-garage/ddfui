@@ -1,26 +1,7 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import InputLabel from '@material-ui/core/InputLabel';
-import FormControl from '@material-ui/core/FormControl';
-import Select from '@material-ui/core/Select';
-
-const useStyles = makeStyles(theme => ({
-    root: {
-      display: 'flex',
-      flexWrap: 'wrap',
-    },
-    formControl: {
-      margin: theme.spacing(1),
-      minWidth: 120,
-    },
-    selectEmpty: {
-      marginTop: theme.spacing(2),
-    },
-  }));
-
+import { Form } from 'react-bootstrap';
   
-export default function OverlayChooser({ processors, value, onChange }) {
-    const classes = useStyles();
+export default function ProcessorChooser({ processors, value, onChange }) {
     const processorOptions = processors.map((processor) => {
         return (
             <option key={processor.name} value={processor.name}>
@@ -30,16 +11,11 @@ export default function OverlayChooser({ processors, value, onChange }) {
     });
 
     return (
-        <FormControl className={classes.formControl}>
-            <InputLabel>Processor</InputLabel>
-            <Select
-                native
-                value={value}
-                onChange={onChange}
-                >
-            <option value="" />
-            {processorOptions}
-            </Select>
-      </FormControl>
+      <Form.Group>
+        <Form.Control as="select" value={value} onChange={onChange}>
+          <option value="" />
+          {processorOptions}
+        </Form.Control>
+      </Form.Group>
     );
 };
