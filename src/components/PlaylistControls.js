@@ -3,7 +3,7 @@ import { Button } from 'react-bootstrap';
 
 export default function PlaylistControls({ onPrevious, onNext, onStay, onStop }) {
     return (
-        <div>
+        <div style={{marginBottom: 16}}>
             <div className="btn-group d-flex" role="group" style={{marginBottom: 16}}>
                 <Button variant="secondary" onClick={onPrevious} className="w-100">Prev</Button>
                 <Button variant="secondary" onClick={onStay} className="w-100">Stay</Button>
