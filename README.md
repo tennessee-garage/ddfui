@@ -1,3 +1,9 @@
+# ddfui
+
+This is a React-based web UI for the
+[dance-floor](https://github.com/tennessee-garage/dance-floor)
+[server interface](https://github.com/tennessee-garage/dance-floor/blob/master/floor/floor/server/README.md)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
