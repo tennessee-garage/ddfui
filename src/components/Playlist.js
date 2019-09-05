@@ -4,6 +4,12 @@ const millisToSeconds = (millis) => {
     return Math.round(Number.parseInt(millis, 10) / 1000);
 }
 
+const STYLE = {
+    maxHeight: 200,
+    overflow: 'scroll',
+    marginBottom: 16,
+}
+
 export default function Playlist({ playlist }) {
     if (!playlist) {
         return null;
@@ -21,7 +27,7 @@ export default function Playlist({ playlist }) {
     });
 
     return (
-        <div className="card card-body bg-light">
+        <div className="card card-body bg-light" style={STYLE}>
             <ul className="list-group">
                 {playlistItems}
             </ul>

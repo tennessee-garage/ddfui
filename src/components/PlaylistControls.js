@@ -1,14 +1,15 @@
 import React from 'react';
-import { ButtonGroup, Button } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 
 export default function PlaylistControls({ onPrevious, onNext, onStay, onStop }) {
     return (
         <div>
-            <ButtonGroup aria-label="Main controls">
-                <Button variant="secondary" onClick={onPrevious}>Prev</Button>
-                <Button variant="secondary" onClick={onStay}>Stay</Button>
-                <Button variant="secondary" onClick={onNext}>Next</Button>
-            </ButtonGroup>
+            <div className="btn-group d-flex" role="group" style={{marginBottom: 16}}>
+                <Button variant="secondary" onClick={onPrevious} className="w-100">Prev</Button>
+                <Button variant="secondary" onClick={onStay} className="w-100">Stay</Button>
+                <Button variant="secondary" onClick={onNext} className="w-100">Next</Button>
+            </div>
+            <Button variant="secondary" onClick={onStop} block>Stop</Button>
         </div>
     );
 };

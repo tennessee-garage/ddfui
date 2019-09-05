@@ -52,6 +52,10 @@ export default class DanceFloorClient {
         return this.post('/api/playlist/stop');
     }
 
+    async playlistPrevious() {
+        return this.post('/api/playlist/previous');
+    }
+
     async setTempo(bpm) {
         return this.post('/api/playlist/stop', { bpm });
     }
