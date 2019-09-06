@@ -103,9 +103,9 @@ export default class DanceFloorController extends React.Component {
                             onNext={this.onPlaylistNext} />
                         <LayerControls
                             layerInfo={status.layers ? status.layers.playlist : {}}
-                            onAlphaChange={(obj, value) => this.onLayerParamChange('playlist', 'alpha', value)}
-                            onWetDryChange={(obj, value) => this.onLayerParamChange('playlist', 'ranged_values', { '0': value })}
-                            onIntensityChange={(obj, value) => this.onLayerParamChange('playlist', 'ranged_values', { '1': value })}
+                            onAlphaChange={(value) => this.onLayerParamChange('playlist', 'alpha', value)}
+                            onWetDryChange={(value) => this.onLayerParamChange('playlist', 'ranged_values', { '0': value })}
+                            onIntensityChange={(value) => this.onLayerParamChange('playlist', 'ranged_values', { '1': value })}
                             />
                     </div>
                 </Col>
@@ -129,9 +129,9 @@ export default class DanceFloorController extends React.Component {
                                     onChange={(e) => this.onLayerProcesorChange('overlay1', e.target.value)} />
                                 <LayerControls
                                     layerInfo={status.layers ? status.layers.overlay1 : {}}
-                                    onAlphaChange={(obj, value) => this.onLayerParamChange('overlay1', 'alpha', value)}
-                                    onWetDryChange={(obj, value) => this.onLayerParamChange('overlay1', 'ranged_values', { '0': value })}
-                                    onIntensityChange={(obj, value) => this.onLayerParamChange('overlay1', 'ranged_values', { '1': value })}
+                                    onAlphaChange={(value) => this.onLayerParamChange('overlay1', 'alpha', value)}
+                                    onWetDryChange={(value) => this.onLayerParamChange('overlay1', 'ranged_values', { '0': value })}
+                                    onIntensityChange={(value) => this.onLayerParamChange('overlay1', 'ranged_values', { '1': value })}
                                     />
                             </Card.Body>
                         </Card>
@@ -145,9 +145,9 @@ export default class DanceFloorController extends React.Component {
                                     onChange={(e) => this.onLayerProcesorChange('overlay2', e.target.value)} />
                                 <LayerControls
                                     layerInfo={status.layers ? status.layers.overlay2 : {}}
-                                    onAlphaChange={(obj, value) => this.onLayerParamChange('overlay2', 'alpha', value)}
-                                    onWetDryChange={(obj, value) => this.onLayerParamChange('overlay2', 'ranged_values', { '0': value })}
-                                    onIntensityChange={(obj, value) => this.onLayerParamChange('overlay2', 'ranged_values', { '1': value })}
+                                    onAlphaChange={(value) => this.onLayerParamChange('overlay2', 'alpha', value)}
+                                    onWetDryChange={(value) => this.onLayerParamChange('overlay2', 'ranged_values', { '0': value })}
+                                    onIntensityChange={(value) => this.onLayerParamChange('overlay2', 'ranged_values', { '1': value })}
                                     />
                             </Card.Body>
                         </Card>
