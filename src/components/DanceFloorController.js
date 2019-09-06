@@ -73,6 +73,11 @@ export default class DanceFloorController extends React.Component {
     render() {
         const { status } = this.state;
         const processors = status.processors ? Object.values(status.processors) : [];
+        if (!status.layers) {
+            // Status not yet loaded.
+            // TODO(mikey): Show a throbber.
+            return null;
+        }
         return (
             <Row>
                 <Col md={4}>
@@ -80,10 +85,11 @@ export default class DanceFloorController extends React.Component {
                         <h5>Playlist</h5>
                         <Playlist playlist={status.playlist} />
                         <PlaylistControls 
+                            isEnabled={status.layers.playlist.enabled}
+                            onSetEnabled={(v) => this.onLayerParamChange('playlist', 'enabled', !!v)}
                             onPrevious={this.onPlaylistPrevious}
                             onStay={this.onPlaylistStay}
-                            onNext={this.onPlaylistNext}
-                            onStop={this.onPlaylistStop} />
+                            onNext={this.onPlaylistNext} />
                         <LayerControls
                             layerInfo={status.layers ? status.layers.playlist : {}}
                             onAlphaChange={(obj, value) => this.onLayerParamChange('playlist', 'alpha', value)}

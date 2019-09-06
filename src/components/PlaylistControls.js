@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
 
-export default function PlaylistControls({ onPrevious, onNext, onStay, onStop }) {
+export default function PlaylistControls({ onPrevious, onNext, onStay, onSetEnabled, isEnabled }) {
     return (
         <div style={{marginBottom: 16}}>
             <div className="btn-group d-flex" role="group" style={{marginBottom: 16}}>
@@ -9,7 +9,7 @@ export default function PlaylistControls({ onPrevious, onNext, onStay, onStop })
                 <Button variant="secondary" onClick={onStay} className="w-100">Stay</Button>
                 <Button variant="secondary" onClick={onNext} className="w-100">Next</Button>
             </div>
-            <Button variant="secondary" onClick={onStop} block>Stop</Button>
+            <Button variant="secondary" onClick={() => onSetEnabled(!isEnabled)} block>{isEnabled ? 'Stop' : 'Start'}</Button>
         </div>
     );
 };

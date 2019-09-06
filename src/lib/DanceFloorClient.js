@@ -39,16 +39,8 @@ export default class DanceFloorClient {
         return this.post('/api/playlist/advance');
     }
 
-    async playlistStart() {
-        return this.post('/api/playlist/start');
-    }
-
     async playlistStay() {
         return this.post('/api/playlist/stay');
-    }
-
-    async playlistStop() {
-        return this.post('/api/playlist/stop');
     }
 
     async playlistPrevious() {
