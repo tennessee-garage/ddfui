@@ -7,6 +7,7 @@ import LayerControls from './LayerControls';
 import FloorPreview from './FloorPreview';
 import ProcessorChooser from './ProcessorChooser';
 import TempoControls from './TempoControls';
+import Slider from './Slider';
 
 import DanceFloorClient from '../lib/DanceFloorClient';
 const CLIENT = new DanceFloorClient();
@@ -81,6 +82,11 @@ export default class DanceFloorController extends React.Component {
         await this.refreshStatus();
     };
 
+    onBrightnessChange = async (brightness) => {
+        await CLIENT.setBrightness(brightness);
+        await this.refreshStatus();
+    };
+
     render() {
         const { status } = this.state;
         const processors = status.processors ? Object.values(status.processors) : [];
@@ -116,6 +122,23 @@ export default class DanceFloorController extends React.Component {
                         bpm={status.tempo.bpm}
                         onBpmChange={this.onBpmChange}
                         onNudgeTempo={this.onNudgeTempo} />
+                    <Row>
+                        <Col md={5}>
+                            <b>brightness</b>
+                        </Col>
+                        <Col>
+                            <Slider
+                                valueLabelDisplay="auto"
+                                aria-label="brightness slider"
+                                value={status.brightness}
+                                min={0}
+                                max={1}
+                                step={0.01}
+                                onChange={this.onBrightnessChange}
+                                />
+                        </Col>
+                    </Row>
+
                 </Col>
                 <Col md={4}>
                     <div className="ddf-panel">
