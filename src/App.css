@@ -1,3 +1,12 @@
+body {
+  font-family: 'VT323', monospace;
+}
+
+nav a {
+  font-family: 'Major Mono Display', monospace;
+  font-weight: bold;
+}
+
 .App {
   text-align: center;
 }

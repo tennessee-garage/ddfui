@@ -9716,6 +9716,16 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
+typeface-major-mono-display@^0.0.71:
+  version "0.0.71"
+  resolved "https://registry.yarnpkg.com/typeface-major-mono-display/-/typeface-major-mono-display-0.0.71.tgz#49eeed4fb5a924bb55959a697c93dbc6dfe71712"
+  integrity sha512-Ey4Zu402v7ajr5YtmZRffedE4GiHaVhcjukGhI6vw62uu9WM9HIG1rW+OjdvnVugDyZ0w9UftBlhMGvFCSsAKg==
+
+typeface-vt323@^0.0.72:
+  version "0.0.72"
+  resolved "https://registry.yarnpkg.com/typeface-vt323/-/typeface-vt323-0.0.72.tgz#795475d3540610754db5e366dccac612c29ee4c8"
+  integrity sha512-yXVY4/iVgQDnE397T3mgXhhUSRk1vt8lmz5BlpGDlRR78BHXfuzg03UZ/owG5b8YbUFrLekDDy8MGTXRNhqi/Q==
+
 ua-parser-js@^0.7.18:
   version "0.7.20"
   resolved "https://registry.yarnpkg.com/ua-parser-js/-/ua-parser-js-0.7.20.tgz#7527178b82f6a62a0f243d1f94fd30e3e3c21098"
