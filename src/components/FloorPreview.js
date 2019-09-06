@@ -5,9 +5,8 @@ export default function FloorPreview() {
     return (
         <div style={{
             width: '100%',
-            border: '1px solid #ccc',
             marginBottom: 16}}>
-            <iframe src={url} title="floor preview"></iframe>
+            <iframe style={{border: 0}} src={url} title="floor preview"></iframe>
          </div>
     );
 };

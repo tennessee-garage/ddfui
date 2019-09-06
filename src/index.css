@@ -11,3 +11,20 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+/*
+ * A box that is a major area of controls, like "playlist", "layers".
+ */
+.ddf-panel {
+  /* border: 1px solid #777;
+  border-style: groove; */
+  width: 100%;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-bottom: 16px;
+}
+
+h5 {
+  font-variant-caps: all-petite-caps;
+  color: #777;
+}
