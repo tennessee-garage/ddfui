@@ -48,7 +48,7 @@ export default class DanceFloorClient {
     }
 
     async setTempo(bpm) {
-        return this.post('/api/playlist/stop', { bpm });
+        return this.post('/api/tempo', { bpm });
     }
 
     async nudgeTempo(bpmDelta, downbeatMillisDelta) {

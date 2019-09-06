@@ -6,6 +6,7 @@ import PlaylistControls from './PlaylistControls';
 import LayerControls from './LayerControls';
 import FloorPreview from './FloorPreview';
 import ProcessorChooser from './ProcessorChooser';
+import TempoControls from './TempoControls';
 
 import DanceFloorClient from '../lib/DanceFloorClient';
 const CLIENT = new DanceFloorClient();
@@ -70,6 +71,16 @@ export default class DanceFloorController extends React.Component {
         await this.refreshStatus();
     };
 
+    onBpmChange = async (bpm) => {
+        await CLIENT.setTempo(bpm);
+        await this.refreshStatus();
+    };
+
+    onNudgeTempo = async (bpmDelta, downbeatDelta) => {
+        await CLIENT.nudgeTempo(bpmDelta, downbeatDelta);
+        await this.refreshStatus();
+    };
+
     render() {
         const { status } = this.state;
         const processors = status.processors ? Object.values(status.processors) : [];
@@ -101,6 +112,10 @@ export default class DanceFloorController extends React.Component {
                 <Col md={4}>
                     <h5>Main</h5>
                     <FloorPreview />
+                    <TempoControls
+                        bpm={status.tempo.bpm}
+                        onBpmChange={this.onBpmChange}
+                        onNudgeTempo={this.onNudgeTempo} />
                 </Col>
                 <Col md={4}>
                     <div className="ddf-panel">
