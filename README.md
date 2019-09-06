@@ -4,7 +4,50 @@ This is a React-based web UI for the
 [dance-floor](https://github.com/tennessee-garage/dance-floor)
 [server interface](https://github.com/tennessee-garage/dance-floor/blob/master/floor/floor/server/README.md)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![image](https://user-images.githubusercontent.com/390829/64398555-41f51100-d033-11e9-89e6-8d7e59ddac49.png)
+
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**
+
+  - [Developer Setup](#developer-setup)
+    - [Quick start instructions](#quick-start-instructions)
+  - [Available Scripts](#available-scripts)
+    - [`npm start`](#npm-start)
+    - [`npm test`](#npm-test)
+    - [`npm run build`](#npm-run-build)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+## Developer Setup
+
+For maximum enjoyment, you will want to be running and developing against a local instance of the [dance-floor server](https://github.com/tennessee-garage/dance-floor).
+
+You don't need any special hardware to run the dance floor server, in fact, most of this UI was developed while bored on an airplane.
+
+### Quick start instructions
+
+Install the dance floor server:
+```
+cd ~/git
+git clone https://github.com/tennessee-garage/dance-floor.git
+cd floor
+pipenv shell
+pipenv install
+```
+
+Run the dance floor server:
+```
+cd ~/git/dance-floor/floor
+pipenv shell
+python run-show.py --driver=devserver
+```
+
+In another terminal, launch the ddfui devserer:
+```
+cd ~/git/ddfui
+yarn start
+```
 
 ## Available Scripts
 
@@ -30,45 +73,3 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 The build is minified and the filenames include the hashes.<br>
 Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
