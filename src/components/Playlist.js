@@ -33,10 +33,12 @@ export default function Playlist({ playlist }) {
     ];
 
     return (
-        <div className="card card-body bg-light" style={STYLE}>
-            <ul className="list-group">
-                {sortedItems}
-            </ul>
-        </div>
+        <>
+            <div className="card card-body bg-light" style={STYLE}>
+                <ul className="list-group">
+                    {sortedItems}
+                </ul>
+            </div>
+        </>
     );
 };

@@ -3,6 +3,7 @@ import { Row, Col, Card } from 'react-bootstrap';
 
 import Playlist from './Playlist';
 import PlaylistControls from './PlaylistControls';
+import PlaylistChooser from './PlaylistChooser';
 import LayerControls from './LayerControls';
 import FloorPreview from './FloorPreview';
 import ProcessorChooser from './ProcessorChooser';
@@ -87,6 +88,10 @@ export default class DanceFloorController extends React.Component {
         await this.refreshStatus();
     };
 
+    onPlaylistChange = async (playlist) => {
+        await this.refreshStatus();
+    };
+
     render() {
         const { status } = this.state;
         const processors = status.processors ? Object.values(status.processors) : [];
@@ -113,6 +118,7 @@ export default class DanceFloorController extends React.Component {
                             onWetDryChange={(value) => this.onLayerParamChange('playlist', 'ranged_values', { '0': value })}
                             onIntensityChange={(value) => this.onLayerParamChange('playlist', 'ranged_values', { '1': value })}
                             />
+                        <PlaylistChooser onChange={this.onPlaylistChange} />
                     </div>
                 </Col>
                 <Col md={4}>

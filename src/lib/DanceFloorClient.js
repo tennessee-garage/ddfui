@@ -67,4 +67,16 @@ export default class DanceFloorClient {
         return this.post('/api/brightness', { brightness });
     }
 
+    async getPlaylists() {
+        return this.get('/api/playlists');
+    }
+
+    async activatePlaylist(name) {
+        return this.post(`/api/playlists/${name}/activate`);
+    }
+
+    async uploadPlaylist(name, data) {
+        return this.post(`/api/playlists/${name}`, data);
+    }
+
 }
