@@ -26,7 +26,6 @@ export default class DanceFloorController extends React.Component {
     componentDidMount() {
         // Fetch initial status.
         CLIENT.getStatus().then((status) => {
-            console.log(status)
             this.setState({ status });
         });
         this.statusPoller = setInterval(async () => {
