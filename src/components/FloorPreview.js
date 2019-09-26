@@ -1,7 +1,8 @@
 import React from 'react';
+import Config from '../config.js'; 
 
 export default function FloorPreview() {
-    const url = 'http://localhost:1979?is_embedded=true';
+    const url = `${Config.DDF_PREVIEW_URL}?is_embedded=true`;
     return (
         <div style={{
             width: '100%',

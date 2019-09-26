@@ -8,6 +8,7 @@ import 'bootswatch/dist/cyborg/bootstrap.css';
 import 'typeface-major-mono-display';
 import 'typeface-vt323';
 import './App.css';
+import CONFIG from './config';
 
 
 function App() {
@@ -32,3 +33,6 @@ function App() {
 }
 
 export default App;
+
+// For convenience of browser debugging, export our config into `window`.
+window.DDF_CONFIG = CONFIG;

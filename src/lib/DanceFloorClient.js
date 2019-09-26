@@ -1,5 +1,7 @@
+import Config from '../config.js';
+
 export default class DanceFloorClient {
-    constructor(baseUrl = 'http://localhost:1977') {
+    constructor(baseUrl = Config.DDF_SERVER_URL) {
         this.baseUrl = baseUrl;
     }
 
