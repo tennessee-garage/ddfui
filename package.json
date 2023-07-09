@@ -9,15 +9,13 @@
     "react": "^16.9.0",
     "react-bootstrap": "^1.0.0-beta.12",
     "react-dom": "^16.9.0",
-    "react-scripts": "3.1.1",
-    "typeface-major-mono-display": "^0.0.71",
-    "typeface-vt323": "^0.0.72"
+    "typeface-major-mono-display": "^1.1.13",
+    "typeface-vt323": "^1.1.13"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "devserver": "parcel src/index.html",
+    "build": "parcel build src/index.html",
+    "toc": "doctoc --notitle --github README.md"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -33,5 +31,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "doctoc": "^2.2.1",
+    "parcel": "^2.9.3",
+    "process": "^0.11.10"
   }
 }
